@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 注册db的配置文件 -->
+	<!-- 为一些实体类定义别名, 其它的地方就可以通过别名直接引用这个类 -->
+	<properties resource="db.propterties"/>
+	<typeAliases>
+		<typeAlias type="com.levelhi.User" alias="_User"/>
+		<!--<typeAlias type="com.atguigu.day03_mybatis.test4.Order" alias="_Order"/>
+		<typeAlias type="com.atguigu.day03_mybatis.test5.Classes" alias="_Classes"/>
+		<typeAlias type="com.atguigu.day03_mybatis.test5.Teacher" alias="_Teacher"/>
+		<typeAlias type="com.atguigu.day03_mybatis.test5.Student" alias="_Student"/>-->
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mapper/userMapper.xml"/>
+	<!--
+		<mapper resource="com/atguigu/day03_mybatis/test2/UserMapper.xml"/>
+		<mapper resource="com/atguigu/day03_mybatis/test4/OrderMapper.xml"/>
+		<mapper resource="com/atguigu/day03_mybatis/test5/OOMapper.xml"/>-->
+
+		<!--<mapper class="com.levelhi.UserMapper"/>-->
+	</mappers>
+
+</configuration>
