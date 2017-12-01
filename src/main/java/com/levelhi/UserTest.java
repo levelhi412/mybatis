@@ -19,7 +19,7 @@ public class UserTest {
 		SqlSession sqlSession = sessionFactory.openSession();
 		
 		String statement = "mapper.userMapper" + ".getUser";
-		User user = sqlSession.selectOne(statement, 2);
+		User user = sqlSession.selectOne(statement, 1);
 		
 		System.out.println(user);
 	}
